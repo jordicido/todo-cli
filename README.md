@@ -1,14 +1,6 @@
 # Messy ToDo CLI (Java)
 
-This is a deliberately small and slightly messy Java CLI todo app to practice refactoring.
-
-## 🔄 Cambios Recientes (2025-11-11)
-
-- Se han eliminado varios comentarios triviales y redundantes en `MessyTodoApp.java` para reducir ruido, manteniendo el desorden estructural para practicar refactorización.
-- La validación de texto en el comando `add` se simplificó (`txt.isEmpty()` en lugar de múltiples formas).
-- Se añadió una comparación artificial `MAGIC_NUMBER == Integer.parseInt("42")` para conservar un "code smell" evitando el warning del analizador.
-- Se añadieron anotaciones `@SuppressWarnings("unused")` en miembros intencionalmente no utilizados (`lastCommand`, `printHelp()`).
-- Persisten otros olores: método gigante, código duplicado, mezcla de responsabilidades, formateo acoplado y lógica repetitiva en manejo de IDs.
+Esta es una aplicación CLI de tareas en Java deliberadamente pequeña y ligeramente desordenada para practicar refactorización.
 
 ## Features
 
@@ -24,7 +16,7 @@ mvn clean package -DskipTests
 
 ## Run Examples
 
-### Usando el script (recomendado)
+### Usando el script
 
 ```bash
 # Añadir tarea
@@ -37,32 +29,6 @@ mvn clean package -DskipTests
 ./todo.sh complete 1
 
 # Eliminar tarea
-./todo.sh remove 1
-```
-
-### Usando Java directamente
-
-```bash
-# 🚨 Messy ToDo CLI (Java) - Proyecto de Refactorización
-
-Este es un proyecto **deliberadamente desordenado** diseñado para practicar técnicas de refactorización en Java.
-
-## 🎯 Objetivo
-
-Aprender a identificar y corregir **code smells** (malos olores en el código) aplicando principios de Clean Code y SOLID.
-
-## 🔧 Compilar y Ejecutar
-
-### Compilar:
-```bash
-mvn clean package -DskipTests
-```
-
-### Ejecutar (usando el script helper):
-```bash
-./todo.sh add "Comprar leche"
-./todo.sh list
-./todo.sh complete 1
 ./todo.sh remove 1
 ```
 
@@ -181,18 +147,3 @@ A pesar del desorden, el proyecto SÍ tiene algunas cosas bien hechas:
 ---
 
 **¡Buena suerte refactorizando! 🚀**
-```
-
-## Persistence
-
-Las tareas se guardan automáticamente en el archivo `todos.json` en el directorio actual. 
-El archivo se crea automáticamente la primera vez que añades una tarea.
-
-## Refactoring Ideas
-
-- Extraer interfaces para desacoplar componentes ✅ (TodoRepository)
-- Añadir validaciones y mejor manejo de errores
-- Implementar tests unitarios con JUnit
-- Añadir más comandos (edit, search, filter)
-- Mejorar el parsing de argumentos
-- Añadir opciones de configuración (ruta del archivo JSON, etc.)
