@@ -8,12 +8,6 @@ Esta es una aplicación CLI de tareas en Java deliberadamente pequeña y ligeram
 - ✅ **CRUD Operations** - Add, List, Complete, Remove
 - ✅ **Simple CLI** - Fácil de usar desde la terminal
 
-## Build
-
-```bash
-mvn clean package -DskipTests
-```
-
 ## Run Examples
 
 ### Usando el script
